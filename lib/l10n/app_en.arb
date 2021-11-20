@@ -1,0 +1,20 @@
+{
+"welcome":"Welcome Back",
+"start": "Start Your Beauty Journey",
+"login": "LOGIN",
+"email":"Email",
+"password":"Password",
+"fullName":"FullName",
+"haveAccount":"Don't have an account",
+"create":"Create now",
+"passwordForget":"Forget Password?",
+"main":"Main Screen",
+"createNew":"Create new account",
+"enterDetails":"Enter details below",
+"register":"REGISTER",
+"reset":"Reset My Password",
+"send":"SEND",
+"enterEmail": "Enter Your Email",
+"newPass":"New password will sent to your email",
+"enterRequired":"Enter required data"
+}
