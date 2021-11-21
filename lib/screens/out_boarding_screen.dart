@@ -29,15 +29,8 @@ class _OutBoardingScreenState extends State<OutBoardingScreen> {
 
   void createAppData() {
     if(SharedPrefController().firstRun){
-      //dbData.createExercises( context);
-     // dbData.createExercises();
-     // dbData.createExercises();
-      dbData.createExercises(context);
-      dbData.createExercises(context);
-      dbData.createExercises(context);
-      dbData.createExercises(context);
-      dbData.createExercises(context);
-      dbData.createExercises(context);
+      SharedPrefController().updateFirstRun();
+      dbData.createActivities();
     }
   }
   @override

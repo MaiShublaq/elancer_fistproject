@@ -36,7 +36,7 @@ class DbController{
    //await db.execute('CREATE TABLE cosmeticsCategories('
    //    'id INTEGER PRIMARY KEY AUTOINCREMENT,'
    //    'name TEXT NOT NULL'
-   //    ')');
+   // ')');
 
    //await db.execute('CREATE TABLE cosmetics('
    //    'id INTEGER PRIMARY KEY AUTOINCREMENT,'
@@ -46,7 +46,6 @@ class DbController{
    //    'idCategory INTEGER NOT NULL,'
    //    'mainImg LONGBLOB NOT NULL,'
    //    'img LONGBLOB NOT NULL'
-
    //    ')');
 
    //await db.execute('CREATE TABLE blogs('
@@ -57,7 +56,6 @@ class DbController{
    //    'autherImg LONGBLOB NOT NULL,'
    //    'content TEXT NOT NULL,'
    //    'img LONGBLOB NOT NULL'
-
    //    ')');
         await db.execute('CREATE TABLE activities('
             'id INTEGER PRIMARY KEY AUTOINCREMENT,'
@@ -65,6 +63,12 @@ class DbController{
             'info TEXT NOT NULL,'
             'period TEXT NOT NULL,'
             'img TEXT NOT NULL'
+            ')');
+
+        await db.execute('CREATE TABLE daily_activities('
+            'id INTEGER PRIMARY KEY AUTOINCREMENT,'
+            'activity_id TEXT NOT NULL,'
+            'date TEXT NOT NULL'
             ')');
 
       },

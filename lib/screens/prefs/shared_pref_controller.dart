@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-enum PrefKey { loggedIn, email, lang, first_run ,name}
+enum PrefKey { loggedIn, email, lang, first_run, name }
 
 class SharedPrefController {
   SharedPrefController._internal();
@@ -24,24 +24,24 @@ class SharedPrefController {
   Future<void> save({required String email}) async {
     await _sharedPreferences.setBool(PrefKey.loggedIn.toString(), true);
     await _sharedPreferences.setString(PrefKey.email.toString(), email);
-
   }
 
   Future<void> setName({required String name}) async {
     await _sharedPreferences.setString(PrefKey.name.toString(), name);
-
   }
-  Future<void> setFirstRun() async {
-    await _sharedPreferences.setBool(PrefKey.loggedIn.toString(), true);
+
+  Future<void> updateFirstRun() async {
+    await _sharedPreferences.setBool(PrefKey.loggedIn.toString(), false);
   }
 
   bool get loggedIn =>
       _sharedPreferences.getBool(PrefKey.loggedIn.toString()) ?? false;
 
   bool get firstRun =>
-      _sharedPreferences.getBool(PrefKey.first_run.toString()) ?? false;
+      _sharedPreferences.getBool(PrefKey.first_run.toString()) ?? true;
+
   String get name =>
-      _sharedPreferences.getString(PrefKey.name.toString()) ?? 'MAi';
+      _sharedPreferences.getString(PrefKey.name.toString()) ?? 'Mai';
 
   //Future <bool> removeKey(String key)async{
   // return await _sharedPreferences.remove(key);

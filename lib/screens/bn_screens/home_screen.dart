@@ -11,7 +11,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key,}) : super(key: key);
+  const HomeScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -23,87 +25,100 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-  //  BlocProvider.of<ExercisesBloc>(context).add(ReadEvent());
-
+    //  BlocProvider.of<ExercisesBloc>(context).add(ReadEvent());
   }
 
   @override
   Widget build(BuildContext context) {
-
-        //   return Scaffold(
- //     appBar:AppBar(
- //       title:Text('gf'),
- //     ),
-
+    //   return Scaffold(
+    //     appBar:AppBar(
+    //       title:Text('gf'),
+    //     ),
 
     return ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       children: [
-      const SizedBox(height: 30,),
-    Row(
-    children:  [
-    CircleAvatar(
-    backgroundImage: AssetImage('images/1.jpg'),
-    radius: 40,
-    ),
-    SizedBox(width: 10,),
-    Text('Hi, ${SharedPrefController().name}!', style: TextStyle(
-    fontSize: 20, fontWeight: FontWeight.w500,)),
-    ],
-    ),
-    const SizedBox(height: 15,),
-    const Text('Your program for today', style:
-    TextStyle(fontSize: 18,
-    fontWeight: FontWeight.w500,
-    ),),
-    const SizedBox(height: 15,),
-
-    Row(
-    children: [
-    Expanded(child: RoutineCard(steps: '0/3',
-    care: 'Daily',
-    daily: 'Morning Care',
-    color: Colors.white,
-    icon: Icons.cloud_outlined)),
-    Expanded(child: RoutineCard(steps: '0/3',
-    care: 'Daily',
-    daily: 'Night Care',
-    color: Colors.pink.shade200,
-    icon: Icons.cloud)),
-    ],
-    ),
-    const SizedBox(height: 20,),
-    const Text('A series of anti-wrinkle exercises', style:
-    TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w500,
-
-
-    ),),
-
-Column(
-  children: EXERCISES_DATA.map((exData) =>
-      ExercisesItem(
-          id: exData.id,
-          name: exData.name,
-          benefits: exData.benefits,
-          alternative: exData.alternative,
-          firstStep: exData.firstStep,
-          secondStep: exData.secondStep,
-          thirdStep: exData.thirdStep,
-          img: exData.img)
-  ).toList(),
-
-)
-
-]
+        const SizedBox(
+          height: 30,
+        ),
+        Row(
+          children: [
+            const CircleAvatar(
+              backgroundImage: AssetImage('images/1.jpg'),
+              radius: 40,
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Text(
+              'Hi, ${SharedPrefController().name}!',
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        const Text(
+          'Your program for today',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        Row(
+          children: [
+            const Expanded(
+              child: RoutineCard(
+                steps: '0/3',
+                care: 'Daily',
+                daily: 'Morning Care',
+                color: Colors.white,
+                icon: Icons.cloud_outlined,
+              ),
+            ),
+            Expanded(
+              child: RoutineCard(
+                steps: '0/3',
+                care: 'Daily',
+                daily: 'Night Care',
+                color: Colors.pink.shade200,
+                icon: Icons.cloud,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        const Text(
+          'A series of anti-wrinkle exercises',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        Column(
+          children: EXERCISES_DATA
+              .map((exData) => ExercisesItem(
+                  id: exData.id,
+                  name: exData.name,
+                  benefits: exData.benefits,
+                  alternative: exData.alternative,
+                  firstStep: exData.firstStep,
+                  secondStep: exData.secondStep,
+                  thirdStep: exData.thirdStep,
+                  img: exData.img))
+              .toList(),
+        )
+      ],
     );
-
-
-
-
-
-
 
 //    body: BlocBuilder<ExercisesBloc,CrudState>(
 
@@ -155,7 +170,6 @@ Column(
 //                   TextStyle(
 //                     fontSize: 18,
 //                     fontWeight: FontWeight.w500,
-
 
 //                   ),),
 //                   InkWell(
@@ -223,13 +237,9 @@ Column(
 //                     },),
 //                   )
 
-
 //                 ],
 
 //               );
-
-
-
 
 //           }
 //           else {
@@ -249,12 +259,6 @@ Column(
 //        },
 //        )
 //   );
-
-
-
-
-
-
 
 //   return ListView(
 //     padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
@@ -276,7 +280,6 @@ Column(
 //           fontWeight: FontWeight.w500,
 //         ),),
 //       const SizedBox(height: 15,),
-
 //       Row(
 //         children:  [
 //           const Expanded(child: RoutineCard(steps: '0/3', care: 'Daily', daily: 'Morning Care',color: Colors.white,icon:Icons.cloud_outlined)),
@@ -288,9 +291,6 @@ Column(
 //         TextStyle(
 //           fontSize: 18,
 //           fontWeight: FontWeight.w500,
-
-
-
 //         ),),
 //       InkWell(
 //         onTap: (){
@@ -300,7 +300,6 @@ Column(
 //           padding: const EdgeInsets.symmetric(vertical: 10),
 //           shrinkWrap: true,
 //           itemCount: 5,itemBuilder: (context, index) {
-
 //           return Card(
 //              shape: RoundedRectangleBorder(
 //               borderRadius: BorderRadius.circular(15),
@@ -331,7 +330,6 @@ Column(
 //                       fontWeight: FontWeight.bold
 //                     )),
 //                   const SizedBox(height: 5,),
-
 //                   Container(
 //                     width: 160,
 //                     child: const Text('uyr euwyeoiwu hjds bvdnxow weyuhkfbd oiaiufh dkjhfash iefihef',style:
@@ -347,17 +345,12 @@ Column(
 //               color: Colors.grey.shade50,
 //               onPressed: (){},),
 //             ],
-
 //             )
 //           );
 //         },),
 //       )
-
-
-
 //
 //     ],
-
 //   );
   }
 }

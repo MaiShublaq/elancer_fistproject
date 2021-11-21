@@ -8,8 +8,8 @@ abstract class DbOperations<T>{
    * U => Update
    * D => Delete
    */
-  Future<int> create(Activities object);
-  Future<List<Activities>> read();
+  Future<int> create(T object);
+  Future<List<T>> read();
   Future<T?> show(int id);
   Future<bool> update(T object);
   Future<bool> delete(int id);

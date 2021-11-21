@@ -1,33 +1,24 @@
-import 'package:elancer_fistproject/bloc/bloc/exercises_bloc.dart';
-import 'package:elancer_fistproject/bloc/states/crud_state.dart';
 import 'package:elancer_fistproject/database/db_controller.dart';
 import 'package:elancer_fistproject/get/language_get_controller.dart';
 import 'package:elancer_fistproject/providers/language_provider.dart';
-import 'package:elancer_fistproject/screens/blog_content_screen.dart';
 import 'package:elancer_fistproject/screens/auth/login_screen.dart';
 import 'package:elancer_fistproject/screens/auth/password/forget_password.dart';
 import 'package:elancer_fistproject/screens/auth/register_screen.dart';
 import 'package:elancer_fistproject/screens/bn_screens/blog_screen.dart';
 import 'package:elancer_fistproject/screens/bn_screens/cosmetics_Screen.dart';
 import 'package:elancer_fistproject/screens/bn_screens/home_screen.dart';
-import 'package:elancer_fistproject/screens/exercises_screen.dart';
 import 'package:elancer_fistproject/screens/launch_screen.dart';
 import 'package:elancer_fistproject/screens/main_screen.dart';
-import 'package:elancer_fistproject/screens/morning_care.dart';
-import 'package:elancer_fistproject/screens/night_care.dart';
 import 'package:elancer_fistproject/screens/out_boarding_screen.dart';
 import 'package:elancer_fistproject/screens/prefs/shared_pref_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
-
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SharedPrefController().initSharedPref();
   await DbController().initDatabase();
-
   runApp(const MyApp());
 }
 
@@ -49,8 +40,6 @@ class MyMaterialApp extends StatelessWidget {
   Get.put<LanguageGetxController>(LanguageGetxController());
   @override
   Widget build(BuildContext context) {
-
-
          return MaterialApp(
            //localizationsDelegates: AppLocalizations.localizationsDelegates,
            //supportedLocales: AppLocalizations.supportedLocales,
@@ -60,7 +49,6 @@ class MyMaterialApp extends StatelessWidget {
        //     GlobalCupertinoLocalizations.delegate,
        //     GlobalWidgetsLocalizations.delegate
        //   ],
-
        //   supportedLocales: const [
        //     Locale('en'),
        //     Locale('ar')
@@ -77,20 +65,17 @@ class MyMaterialApp extends StatelessWidget {
              '/home_screen':(context)=>HomeScreen(),
              '/blog_screen':(context)=>BlogScreen(),
              '/cosmetics_screen':(context)=>CosmeticsScreen(),
-             '/morning_care_screen':(context)=>MorningCare(),
-            // '/night_care_screen':(context)=>NightCare(),
-            // '/blog_content_screen':(context)=>BlogContent(),
-           //  '/exercises_screen':(context)=>ExcersisesScreen(),
+             // '/morning_care_screen':(context)=>MorningCare(),
+             //'/night_care_screen':(context)=>NightCare(),
+             //'/blog_content_screen':(context)=>BlogContent(),
+             //'/exercises_screen':(context)=>ExcersisesScreen(),
              //'/cleanser_screen':(context)=>CleanserScreen(),
-            // '/eye_cream_screen':(context)=>EyeCreamScreen(),
+             //'/eye_cream_screen':(context)=>EyeCreamScreen(),
              //'/moisturizer_screen':(context)=>MoisturizerScreen(),
-           //  '/sunscreen_screen':(context)=>SunscreenScreen(),
-            // '/product_content_screen':(context)=>ProductContentScreen(),
+             //'/sunscreen_screen':(context)=>SunscreenScreen(),
+             //'/product_content_screen':(context)=>ProductContentScreen(),
            }
          );
-
-
-
 //      return MultiBlocProvider(
 //        providers: [
 //          BlocProvider<ExercisesBloc>(
@@ -134,18 +119,8 @@ class MyMaterialApp extends StatelessWidget {
 //              '/moisturizer_screen':(context)=>MoisturizerScreen(),
 //              '/sunscreen_screen':(context)=>SunscreenScreen(),
 //              '/product_content_screen':(context)=>ProductContentScreen(),
-
-
-
-
-
-
-
-//            }
-
-//            ,
+//            },
 //          );
-
 //        }),
 //      );
    }

@@ -1,53 +1,42 @@
-import 'package:elancer_fistproject/bloc/bloc/exercises_bloc.dart';
-import 'package:elancer_fistproject/bloc/events/crud_event.dart';
 import 'package:elancer_fistproject/database/controllers/activities_db_controller.dart';
-import 'package:elancer_fistproject/database/controllers/exercises_db_controller.dart';
 import 'package:elancer_fistproject/models/activities.dart';
-import 'package:elancer_fistproject/models/exercises.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter/material.dart';
 
 class DbData {
+  final ActivitiesDbController _activitiesDbController =
+      ActivitiesDbController();
 
-
-
-ActivitiesDbController _activitiesDbController=ActivitiesDbController();
-Future<void> createExercises(BuildContext context) async {
-  _activitiesDbController.create(Activities(
-      title: 'Cleansing',
-      info: 'Try massaging your face to relax',
-      period: 'morning',
-      img: 'images/5.jpg'));
-  _activitiesDbController.create(Activities(
-      title: 'Toning',
-      info: 'Cleand and close your pores',
-      period: 'morning',
-      img: 'images/6.jpg'));
-  _activitiesDbController.create(Activities(
-      title: 'Cream',
-      info: 'help to treat your skin',
-      period: 'morning',
-      img: 'images/7.jpg'));
-  _activitiesDbController.create(Activities(
-      title: 'MakeUp Remover',
-      info: 'washes away cosmetics and dirt',
-      period: 'night',
-      img: 'images/5.jpg'));
-  _activitiesDbController.create(Activities(
-      title: 'Eye Cream',
-      info: 'Give skin a youthful glow',
-      period: 'night',
-      img: 'images/6.jpg'));
-  _activitiesDbController.create(Activities(
-      title: 'Lip Mask',
-      info: 'prevent drying out lips',
-      period: 'night',
-      img: 'images/7.jpg'));
-
-
-
-
-}
+  Future<void> createActivities() async {
+    await _activitiesDbController.create(Activities(
+        title: 'Cleansing',
+        info: 'Try massaging your face to relax',
+        period: 'morning',
+        img: 'images/5.jpg'));
+    await _activitiesDbController.create(Activities(
+        title: 'Toning',
+        info: 'Cleand and close your pores',
+        period: 'morning',
+        img: 'images/6.jpg'));
+    await _activitiesDbController.create(Activities(
+        title: 'Cream',
+        info: 'help to treat your skin',
+        period: 'morning',
+        img: 'images/7.jpg'));
+    await _activitiesDbController.create(Activities(
+        title: 'MakeUp Remover',
+        info: 'washes away cosmetics and dirt',
+        period: 'night',
+        img: 'images/5.jpg'));
+    await _activitiesDbController.create(Activities(
+        title: 'Eye Cream',
+        info: 'Give skin a youthful glow',
+        period: 'night',
+        img: 'images/6.jpg'));
+    await _activitiesDbController.create(Activities(
+        title: 'Lip Mask',
+        info: 'prevent drying out lips',
+        period: 'night',
+        img: 'images/7.jpg'));
+  }
 //  ExercisesDbController _exercisesDbController = ExercisesDbController();
 //
 //  Future<void> createExercises(BuildContext context) async {
@@ -96,9 +85,5 @@ Future<void> createExercises(BuildContext context) async {
 //       thirdStep: "Repeat six more times and finish by squeezing eyes shut tightly for 10 seconds.",
 //       img: 'images/9.jpg'
 //   ));
-//
-//
 //  }
 }
-
-

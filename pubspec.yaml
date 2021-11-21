@@ -46,7 +46,6 @@ dependencies:
   get: ^4.3.8
   flutter_screenutil: ^4.0.2+3
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
